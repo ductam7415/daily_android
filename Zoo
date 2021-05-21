@@ -1,0 +1,46 @@
+package Zoo
+
+const val  Zoo="chúc mọi người thượng lộ bình an"
+open class Animal(val eat: String, val number: Int, val name: String ){
+     open fun talk(messsage: String = ""){
+        println("$messsage $name muốn ăn $eat ")
+    }
+}
+class Dog(val feature: String, eat: String,  number: Int, name: String ):Animal(eat,number,name){
+    override fun talk(messsage: String){
+        super.talk(messsage)
+    }
+    val Character:String
+        get() {
+           return "$name $feature"
+        }
+    }
+class Cat(eat: String,  number: Int, name: String ):Animal(eat, number, name){
+    override fun talk(messsage: String){
+        super.talk(messsage)
+    }
+}
+class Duck(val place: String, eat: String,  number: Int, name: String ):Animal(eat, number, name){
+   fun swim(noi: String = ""){
+       println("$noi $name muốn bơi ở $place")
+   }
+}
+class Pig(eat: String,  number: Int, name: String ):Animal(eat, number, name){
+    override fun talk(messsage: String){
+        super.talk(messsage)
+    }
+}
+fun main(args: Array<String>){
+    println("welcome to Zoo")
+    val dog:Dog = Dog(eat = "dogfoods", number = 14, name = "Husky", feature ="rụng lông")
+    println(dog.Character)
+    dog.talk("gâu gâu")
+    val cat:Cat = Cat(eat = "cá", number = 3, name = "mèo tam thể")
+    cat.talk("meo meo")
+    val duck:Duck = Duck(place = "hồ", name = "vịt trời", eat = "cam", number = 30)
+    duck.swim("quạc quạc")
+    val pig:Pig = Pig(eat = "ngô",  number = 9, name = "lợn rừng")
+    pig.talk("ụt ịt")
+    println("$Zoo")
+}
+
